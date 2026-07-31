@@ -1,84 +1,59 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body{
-    background:#f4f4f4;
-}
+<div class="container">
+    <h1>Personal Expense Tracker</h1>
 
-.container{
-    width:700px;
-    max-width:95%;
-    margin:40px auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
-}
+    <form id="expense-form">
+        <input
+            type="text"
+            id="title"
+            placeholder="Expense Title"
+            required>
 
-h1{
-    text-align:center;
-    margin-bottom:20px;
-}
+        <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            required>
 
-form{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-}
+        <select id="category" required>
+            <option value="">Select Category</option>
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Entertainment</option>
+            <option>Other</option>
+        </select>
 
-input,
-select,
-button{
-    padding:10px;
-    font-size:16px;
-}
+        <button type="submit">Add Expense</button>
+    </form>
 
-button{
-    background:#2196f3;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
+    <h2>Total Expense: ₹<span id="total">0</span></h2>
 
-button:hover{
-    background:#0b7dda;
-}
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+        </thead>
 
-table{
-    width:100%;
-    margin-top:20px;
-    border-collapse:collapse;
-}
+        <tbody id="expense-list"></tbody>
 
-table th,
-table td{
-    border:1px solid #ddd;
-    padding:10px;
-    text-align:center;
-}
+    </table>
+</div>
 
-.delete{
-    background:red;
-    color:white;
-    border:none;
-    padding:8px 12px;
-    cursor:pointer;
-}
-
-h2{
-    margin-top:20px;
-    text-align:center;
-    color:green;
-}
-
-@media(max-width:650px){
-
-form{
-grid-template-columns:1fr;
-}
-
-}
+<script src="script.js"></script>
+</body>
+</html>
