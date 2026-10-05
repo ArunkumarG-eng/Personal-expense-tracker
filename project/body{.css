@@ -1,0 +1,30 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    background-image: url("images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container::after{
+    content: "";
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto 0;
+    background-image: url("images/finance.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
